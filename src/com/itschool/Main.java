@@ -8,6 +8,108 @@ public class Main
 	// Экземпляр класса Scanner для ввода значений в консоль
 	private static final Scanner scanner = new Scanner(System.in);
 
+
+	// Ветвления. Пример 1
+	private static void ConditionExample_1()
+	{
+		System.out.println("\nВетвления. Пример 1");
+		int a = 1, b = 2; // создаем две целочисленные переменные
+
+		// На 16-й строке создаем условную конструкцию if, в условии которой проверяем: a меньше b
+
+		if (a < b)      // Если условие удовлетворяет истинности, выполняем тело условной конструкции.
+		{
+			System.out.println("a < b");     // Ветвь 1
+		}
+	}
+
+	// Ветвления. Пример 2
+	private static void ConditionExample_2()
+	{
+		System.out.println("\nВетвления. Пример 2");
+		int a = 2, b = 1;
+
+		if (a < b)  // Если условие удовлетворяет истинности, выполняем тело блока if.
+		{
+			System.out.println("a < b");               // Ветвь 1
+		}
+		else        // Иначе, выполняем тело блока else.
+		{
+			System.out.println("a не меньше b");       // Ветвь 2
+		}
+
+
+	}
+
+	// Ветвления. Пример 3
+	private static void ConditionExample_3()
+	{
+		System.out.println("\nВетвления. Пример 3");
+		int a = 1, b = 2;
+
+		// Если тело блока if или else состоит из одного выражения, то операторные скобки можно опустить
+
+		if (a < b) {
+			System.out.println("a < b");           // Ветвь 1
+		}
+		else {
+			System.out.println("a не меньше b");   // Ветвь 2
+		}
+	}
+
+	// Ветвления. Пример 4
+	private static void ConditionExample_4()
+	{
+		System.out.println("\nВетвления. Пример 4");
+		int a = 2, b = 2;
+
+		if (a < b)      // каскад условных операторов
+		{
+			System.out.println("a < b");   // Ветвь 1
+		}
+		else if (a > b) // идем на новую проверку
+		{
+			System.out.println("a > b");   // Ветвь 2
+		}
+		else {
+			System.out.println("a == b");  // Ветвь 3
+		}
+	}
+
+	// Ветвления. Пример 5
+	private static void ConditionExample_5()
+	{
+		System.out.println("\nВетвления. Пример 5");
+
+		String login = "Admin";
+		String password = "P@ssw0rd";
+
+		System.out.print("Введите login: ");
+
+		// На 77 строке создаем строкову локальную переменную с именем usersLogin
+		// и принимаем в нее ввод от пользователя
+
+		String usersLogin = scanner.next();
+
+		// login == usersLogin - сравнивает ссылки
+		// login.equals(userLogin) - сравнивает значения
+
+		if (login.equals(usersLogin)) {
+			System.out.print("Введите password: ");
+			String usersPassword = scanner.next();
+
+			if (password.equals(usersPassword)) {
+				System.out.println("Здравствуйте " + usersLogin + " Вы вошли в систему.");
+			}
+			else {
+				System.out.println("Вы ввели неверный пароль.");
+			}
+		}
+		else {
+			System.out.println("Нет пользователя с таким именем.");
+		}
+	}
+
 	//  Тернарный оператор. Пример 1
 	private static void TernaryExample_1()
 	{
@@ -494,106 +596,5 @@ public class Main
 
 		//HomeworkExample_1();
 		//HomeworkExample_2();
-	}
-
-	// Ветвления. Пример 1
-	private static void ConditionExample_1()
-	{
-		System.out.println("\nВетвления. Пример 1");
-		int a = 1, b = 2; // создаем две целочисленные переменные
-
-		// На 16-й строке создаем условную конструкцию if, в условии которой проверяем: a меньше b
-
-		if (a < b)      // Если условие удовлетворяет истинности, выполняем тело условной конструкции.
-		{
-			System.out.println("a < b");     // Ветвь 1
-		}
-	}
-
-	// Ветвления. Пример 2
-	private static void ConditionExample_2()
-	{
-		System.out.println("\nВетвления. Пример 2");
-		int a = 2, b = 1;
-
-		if (a < b)  // Если условие удовлетворяет истинности, выполняем тело блока if.
-		{
-			System.out.println("a < b");               // Ветвь 1
-		}
-		else        // Иначе, выполняем тело блока else.
-		{
-			System.out.println("a не меньше b");       // Ветвь 2
-		}
-
-
-	}
-
-	// Ветвления. Пример 3
-	private static void ConditionExample_3()
-	{
-		System.out.println("\nВетвления. Пример 3");
-		int a = 1, b = 2;
-
-		// Если тело блока if или else состоит из одного выражения, то операторные скобки можно опустить
-
-		if (a < b) {
-			System.out.println("a < b");           // Ветвь 1
-		}
-		else {
-			System.out.println("a не меньше b");   // Ветвь 2
-		}
-	}
-
-	// Ветвления. Пример 4
-	private static void ConditionExample_4()
-	{
-		System.out.println("\nВетвления. Пример 4");
-		int a = 2, b = 2;
-
-		if (a < b)      // каскад условных операторов
-		{
-			System.out.println("a < b");   // Ветвь 1
-		}
-		else if (a > b) // идем на новую проверку
-		{
-			System.out.println("a > b");   // Ветвь 2
-		}
-		else {
-			System.out.println("a == b");  // Ветвь 3
-		}
-	}
-
-	// Ветвления. Пример 5
-	private static void ConditionExample_5()
-	{
-		System.out.println("\nВетвления. Пример 5");
-
-		String login = "Admin";
-		String password = "P@ssw0rd";
-
-		System.out.print("Введите login: ");
-
-		// На 77 строке создаем строкову локальную переменную с именем usersLogin
-		// и принимаем в нее ввод от пользователя
-
-		String usersLogin = scanner.next();
-
-		// login == usersLogin - сравнивает ссылки
-		// login.equals(userLogin) - сравнивает значения
-
-		if (login.equals(usersLogin)) {
-			System.out.print("Введите password: ");
-			String usersPassword = scanner.next();
-
-			if (password.equals(usersPassword)) {
-				System.out.println("Здравствуйте " + usersLogin + " Вы вошли в систему.");
-			}
-			else {
-				System.out.println("Вы ввели неверный пароль.");
-			}
-		}
-		else {
-			System.out.println("Нет пользователя с таким именем.");
-		}
 	}
 }
