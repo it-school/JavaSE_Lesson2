@@ -1,114 +1,12 @@
 package com.itschool;
 
-
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main
 {
-
 	// Экземпляр класса Scanner для ввода значений в консоль
-	private static Scanner scanner = new Scanner(System.in);
-
-	// Ветвления. Пример 1
-	private static void ConditionExample_1()
-	{
-		System.out.println("\nВетвления. Пример 1");
-		int a = 1, b = 2; // создаем две целочисленные переменные
-
-		// На 16-й строке создаем условную конструкцию if, в условии которой проверяем: a меньше b
-
-		if (a < b)      // Если условие удовлетворяет истинности, выполняем тело условной конструкции.
-		{
-			System.out.println("a < b");     // Ветвь 1
-		}
-	}
-
-	// Ветвления. Пример 2
-	private static void ConditionExample_2()
-	{
-		System.out.println("\nВетвления. Пример 2");
-		int a = 2, b = 1;
-
-		if (a < b)  // Если условие удовлетворяет истинности, выполняем тело блока if.
-		{
-			System.out.println("a < b");               // Ветвь 1
-		}
-		else        // Иначе, выполняем тело блока else.
-		{
-			System.out.println("a не меньше b");       // Ветвь 2
-		}
-
-
-	}
-
-	// Ветвления. Пример 3
-	private static void ConditionExample_3()
-	{
-		System.out.println("\nВетвления. Пример 3");
-		int a = 1, b = 2;
-
-		// Если тело блока if или else состоит из одного выражения, то операторные скобки можно опустить
-
-       if (a < b) {
-           System.out.println("a < b");           // Ветвь 1
-       }
-       else {
-           System.out.println("a не меньше b");   // Ветвь 2
-       }
-	}
-
-	// Ветвления. Пример 4
-	private static void ConditionExample_4()
-	{
-		System.out.println("\nВетвления. Пример 4");
-		int a = 2, b = 2;
-
-		if (a < b)      // каскад условных операторов
-		{
-			System.out.println("a < b");   // Ветвь 1
-		}
-		else if (a > b) // идем на новую проверку
-		{
-			System.out.println("a > b");   // Ветвь 2
-		}
-		else {
-			System.out.println("a == b");  // Ветвь 3
-		}
-	}
-
-	// Ветвления. Пример 5
-	private static void ConditionExample_5()
-	{
-		System.out.println("\nВетвления. Пример 5");
-
-		String login = "Admin";
-		String password = "P@ssw0rd";
-
-		System.out.print("Введите login: ");
-
-		// На 77 строке создаем строкову локальную переменную с именем usersLogin
-		// и принимаем в нее ввод от пользователя
-
-		String usersLogin = scanner.next();
-
-		// login == usersLogin - сравнивает ссылки
-		// login.equals(userLogin) - сравнивает значения
-
-		if (login.equals(usersLogin)) {
-			System.out.print("Введите password: ");
-			String usersPassword = scanner.next();
-
-			if (password.equals(usersPassword)) {
-				System.out.println("Здравствуйте " + usersLogin + " Вы вошли в систему.");
-			}
-			else {
-				System.out.println("Вы ввели неверный пароль.");
-			}
-		}
-		else {
-			System.out.println("Нет пользователя с таким именем.");
-		}
-	}
+	private static final Scanner scanner = new Scanner(System.in);
 
 	//  Тернарный оператор. Пример 1
 	private static void TernaryExample_1()
@@ -195,8 +93,7 @@ public class Main
 		double cost = 0.0;       // Общая стоимость.
 
 		// ЕСЛИ: Купили 10 единиц товара и больше. ТО: предоставить скидку в 25%. ИНАЧЕ: Скидку не предоставлять.
-
-		cost = quantity >= 10 ? quantity * price * discount : quantity * price;
+		cost = quantity * price * (quantity >= 10 ? discount : 1);
 
 		System.out.println("Общая стоимость товара составляет: " + cost + " у.е.");
 	}
@@ -285,7 +182,6 @@ public class Main
 				System.out.println("Вы ввели несуществующий день недели.");
 				break;
 		}
-
 	}
 
 	//   Оператор множественного выбора. Пример 3
@@ -298,10 +194,15 @@ public class Main
 
 		switch (day) {
 			// Для пустых операторов case разрешено "проваливание" от одного оператора к другому.
-			case "1": case "2": case "3": case "4": case "5":
+			case "1":
+			case "2":
+			case "3":
+			case "4":
+			case "5":
 				System.out.println("Этот день недели - Рабочий.");
 				break;
-			case "6": case "7":
+			case "6":
+			case "7":
 				System.out.println("Этот день недели - Выходной.");
 				break;
 			default:
@@ -354,8 +255,8 @@ public class Main
 		int a = 3, b = 10;
 
 		// Реализация сравнения на if-else
-       if (a < b) { System.out.println("a меньше b"); }
-       else { System.out.println("а больше b"); }
+		if (a < b) { System.out.println("a меньше b"); }
+		else { System.out.println("а больше b"); }
 
 		// Реализвация сравнения на тернарном операторе (?:)
 		System.out.println("a " + (a < b ? "меньше" : "больше") + " b");
@@ -368,9 +269,9 @@ public class Main
 		int a = 2;
 
 		// Реализвация на if-else
-       if (a == 1) { System.out.println("a = 1"); }
-       else if (a == 2) { System.out.println("a = 2"); }
-       else { System.out.println("Переменная а не равна ни 1, ни 2"); }
+		if (a == 1) { System.out.println("a = 1"); }
+		else if (a == 2) { System.out.println("a = 2"); }
+		else { System.out.println("Переменная а не равна ни 1, ни 2"); }
 
 		// Реализация на switch-case
 		switch (a) {
@@ -531,13 +432,13 @@ public class Main
 		idealWeight = growth - 100;
 
 		// Если вес больше идеального веса
-       if (weight > idealWeight) { System.out.println("Вам необходимо похудеть на " + (weight - idealWeight) + " кг"); }
-       // Иначе если вес меньше идеального веса
-       else if (weight < idealWeight) {
-           System.out.println("Вам необходимо поправится на " + (idealWeight - weight) + " кг");
-       }
-       // Иначе
-       else { System.out.println("Ваш вес идеален ! "); }
+		if (weight > idealWeight) { System.out.println("Вам необходимо похудеть на " + (weight - idealWeight) + " кг"); }
+		// Иначе если вес меньше идеального веса
+		else if (weight < idealWeight) {
+			System.out.println("Вам необходимо поправится на " + (idealWeight - weight) + " кг");
+		}
+		// Иначе
+		else { System.out.println("Ваш вес идеален ! "); }
 
 	}
 
@@ -553,33 +454,26 @@ public class Main
 		System.out.print("Введите номер месяца : ");
 		index = scanner.nextInt();
 
-       if (index == 1 || index == 2) { System.out.println("Сейчас зима..."); }
-       else if (index >= 3 && index <= 5) { System.out.println("Сейчас весна..."); }
-       else if (index >= 6 && index <= 8) { System.out.println("Сейчас лето..."); }
-       else if (index >= 9 && index <= 11) { System.out.println("Сейчас осень..."); }
-       else if (index == 12) { System.out.println("Сейчас зима и скоро Новый год :)"); }
-       else { System.out.println("Ошибка ввода данных"); }
+		if (index == 1 || index == 2) { System.out.println("Сейчас зима..."); }
+		else if (index >= 3 && index <= 5) { System.out.println("Сейчас весна..."); }
+		else if (index >= 6 && index <= 8) { System.out.println("Сейчас лето..."); }
+		else if (index >= 9 && index <= 11) { System.out.println("Сейчас осень..."); }
+		else if (index == 12) { System.out.println("Сейчас зима и скоро Новый год :)"); }
+		else { System.out.println("Ошибка ввода данных"); }
 	}
 
 	public static void main(String[] args)
 	{
-		// Для того, чтобы запустить пример (примеры), уберите перед ним(ними) //
-		int a = 5;
-		if (a % 2 == 0) {
-			System.out.println("Chet");
-		}
-		else {
-			System.out.println("NeChet");
-		}
+		Random r = new Random();
+		double b = r.nextDouble() * 5;
+		System.out.println(String.format("%8.3f", b));
 
-		System.out.println((a % 2 == 0 ? "Chet" : "NeChet"));
-/*
-        ConditionExample_1();
-        ConditionExample_2();
-        ConditionExample_3();
-        ConditionExample_4();
-        ConditionExample_5();
-*/
+		ConditionExample_1();
+		ConditionExample_2();
+		ConditionExample_3();
+		ConditionExample_4();
+		ConditionExample_5();
+
 		//TernaryExample_1();
 		//TernaryExample_2();
 		//TernaryExample_3();
@@ -600,5 +494,106 @@ public class Main
 
 		//HomeworkExample_1();
 		//HomeworkExample_2();
+	}
+
+	// Ветвления. Пример 1
+	private static void ConditionExample_1()
+	{
+		System.out.println("\nВетвления. Пример 1");
+		int a = 1, b = 2; // создаем две целочисленные переменные
+
+		// На 16-й строке создаем условную конструкцию if, в условии которой проверяем: a меньше b
+
+		if (a < b)      // Если условие удовлетворяет истинности, выполняем тело условной конструкции.
+		{
+			System.out.println("a < b");     // Ветвь 1
+		}
+	}
+
+	// Ветвления. Пример 2
+	private static void ConditionExample_2()
+	{
+		System.out.println("\nВетвления. Пример 2");
+		int a = 2, b = 1;
+
+		if (a < b)  // Если условие удовлетворяет истинности, выполняем тело блока if.
+		{
+			System.out.println("a < b");               // Ветвь 1
+		}
+		else        // Иначе, выполняем тело блока else.
+		{
+			System.out.println("a не меньше b");       // Ветвь 2
+		}
+
+
+	}
+
+	// Ветвления. Пример 3
+	private static void ConditionExample_3()
+	{
+		System.out.println("\nВетвления. Пример 3");
+		int a = 1, b = 2;
+
+		// Если тело блока if или else состоит из одного выражения, то операторные скобки можно опустить
+
+		if (a < b) {
+			System.out.println("a < b");           // Ветвь 1
+		}
+		else {
+			System.out.println("a не меньше b");   // Ветвь 2
+		}
+	}
+
+	// Ветвления. Пример 4
+	private static void ConditionExample_4()
+	{
+		System.out.println("\nВетвления. Пример 4");
+		int a = 2, b = 2;
+
+		if (a < b)      // каскад условных операторов
+		{
+			System.out.println("a < b");   // Ветвь 1
+		}
+		else if (a > b) // идем на новую проверку
+		{
+			System.out.println("a > b");   // Ветвь 2
+		}
+		else {
+			System.out.println("a == b");  // Ветвь 3
+		}
+	}
+
+	// Ветвления. Пример 5
+	private static void ConditionExample_5()
+	{
+		System.out.println("\nВетвления. Пример 5");
+
+		String login = "Admin";
+		String password = "P@ssw0rd";
+
+		System.out.print("Введите login: ");
+
+		// На 77 строке создаем строкову локальную переменную с именем usersLogin
+		// и принимаем в нее ввод от пользователя
+
+		String usersLogin = scanner.next();
+
+		// login == usersLogin - сравнивает ссылки
+		// login.equals(userLogin) - сравнивает значения
+
+		if (login.equals(usersLogin)) {
+			System.out.print("Введите password: ");
+			String usersPassword = scanner.next();
+
+			if (password.equals(usersPassword)) {
+				System.out.println("Здравствуйте " + usersLogin + " Вы вошли в систему.");
+			}
+			else {
+				System.out.println("Вы ввели неверный пароль.");
+			}
+		}
+		else {
+			System.out.println("Нет пользователя с таким именем.");
+		}
 	}
 }
