@@ -578,32 +578,32 @@ public class Main {
         double b = r.nextDouble() * 5;
         System.out.println(String.format("%8.3f", b));
 
-//		ConditionExample_1();
-//		ConditionExample_2();
-//		ConditionExample_3();
-//		ConditionExample_4();
-//		ConditionExample_5();
-
-        //TernaryExample_1();
-        //TernaryExample_2();
-        //TernaryExample_3();
-        //TernaryExample_4();
-        //TernaryExample_5();
-
-        //SwitchExample_1();
-        //SwitchExample_2();
-        //SwitchExample_3();
-        SwitchExample_4();
-        //CoffeeMakerExample();
-
-        //FromIfToTernary();
-        //FromIfToSwitch();
-
-        //HardwareLogicExample();
-        //ShortLogic();
-        //LogicalExpressions();
-
-        //HomeworkExample_1();
-        //HomeworkExample_2();
+        ConditionExample_1();
+        ConditionExample_2();
+        ConditionExample_3();
+        ConditionExample_4();
+        ConditionExample_5();
+//
+//        TernaryExample_1();
+//        TernaryExample_2();
+//        TernaryExample_3();
+//        TernaryExample_4();
+//        TernaryExample_5();
+//
+//        SwitchExample_1();
+//        SwitchExample_2();
+//        SwitchExample_3();
+//        SwitchExample_4();
+//        CoffeeMakerExample();
+//
+//        FromIfToTernary();
+//        FromIfToSwitch();
+//
+//        HardwareLogicExample();
+//        ShortLogic();
+//        LogicalExpressions();
+//
+//        HomeworkExample_1();
+//        HomeworkExample_2();
     }
 }
