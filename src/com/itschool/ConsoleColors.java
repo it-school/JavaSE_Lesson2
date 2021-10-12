@@ -24,6 +24,16 @@ public class ConsoleColors {
    public static final String CYAN_BOLD = "\033[1;36m";   // CYAN
    public static final String WHITE_BOLD = "\033[1;37m";  // WHITE
 
+   // Italic
+   public static final String BLACK_ITALIC = "\033[3;30m";  // BLACK
+   public static final String RED_ITALIC = "\033[3;31m";    // RED
+   public static final String GREEN_ITALIC = "\033[3;32m";  // GREEN
+   public static final String YELLOW_ITALIC = "\033[3;33m"; // YELLOW
+   public static final String BLUE_ITALIC = "\033[3;34m";   // BLUE
+   public static final String PURPLE_ITALIC = "\033[3;35m"; // PURPLE
+   public static final String CYAN_ITALIC = "\033[3;36m";   // CYAN
+   public static final String WHITE_ITALIC = "\033[3;37m";  // WHITE
+
    // Underline
    public static final String BLACK_UNDERLINED = "\033[4;30m";  // BLACK
    public static final String RED_UNDERLINED = "\033[4;31m";    // RED

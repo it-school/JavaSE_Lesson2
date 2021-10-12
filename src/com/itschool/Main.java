@@ -9,7 +9,7 @@ public class Main {
    public static void main(String[] args) {
       Random r = new Random();
       double b = r.nextDouble(10) - 5;
-      System.out.println(ConsoleColors.WHITE_BOLD + ConsoleColors.GREEN_BACKGROUND_BRIGHT + String.format("%8" + ".3f", b) + ConsoleColors.RESET);
+      System.out.println(System.lineSeparator() + ConsoleColors.GREEN_BACKGROUND_BRIGHT + String.format("%8" + ".3f", b) + ConsoleColors.RESET);
       // Форматирование вывода на экран вещественных числовых значений + управление цветом текста и фона, стилем текста
       // "%8.3f" означает: 8 знаков для вещественного числа (f - float) с выравниванием по правому краю,
       // при этом 3 знака после запятой (дробная часть)
