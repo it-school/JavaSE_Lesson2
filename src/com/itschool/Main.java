@@ -4,13 +4,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-   // Экземпляр класса Scanner для ввода значений в консоль
-   private static final Scanner scanner = new Scanner(System.in);
+   private static final Scanner scanner = new Scanner(System.in); // Экземпляр класса Scanner для ввода значений в консоль
 
    public static void main(String[] args) {
       Random r = new Random();
       double b = r.nextDouble() * 5;
-      System.out.println(String.format("%8.3f", b));  // Форматирование вывода на экран вещественных числовых значений
+      System.out.println(System.lineSeparator() + ConsoleColors.BLUE_BOLD + ConsoleColors.CYAN_BACKGROUND_BRIGHT + String.format("%8.3f", b) + ConsoleColors.RESET);
+      // Форматирование вывода на экран вещественных числовых значений + управление цветом текста и фона, стилем текста
       // "%8.3f" означает: 8 знаков для вещественного числа (f - float) с выравниванием по правому краю,
       // при этом 3 знака после запятой (дробная часть)
 
@@ -247,7 +247,7 @@ public class Main {
             break;
          }
 
-         // На 215 строке создаем (необязательный) оператор default, тело которого выполняется в случае,
+         // В 253 строке создаем (необязательный) оператор default, тело которого выполняется в случае,
          // если значение выражения-селектора не совпадет ни с одним из значений постоянных выражений.
 
          default: {
@@ -261,7 +261,7 @@ public class Main {
    //   Оператор множественного выбора. Пример 2
    private static void SwitchExample_2() {
       System.out.println("\nОператор множественного выбора. Пример 2");
-      System.out.println("Введите номер дня недели: 1-2-3-4-5-6-7: ");
+      System.out.println("Введите номер дня недели (число от 1 до 7): ");
 
       String myDay = scanner.next();
 
