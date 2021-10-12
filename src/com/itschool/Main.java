@@ -8,8 +8,8 @@ public class Main {
 
    public static void main(String[] args) {
       Random r = new Random();
-      double b = r.nextDouble() * 5;
-      System.out.println(System.lineSeparator() + ConsoleColors.BLUE_BOLD + ConsoleColors.CYAN_BACKGROUND_BRIGHT + String.format("%8.3f", b) + ConsoleColors.RESET);
+      double b = r.nextDouble(10) - 5;
+      System.out.println(ConsoleColors.WHITE_BOLD + ConsoleColors.GREEN_BACKGROUND_BRIGHT + String.format("%8" + ".3f", b) + ConsoleColors.RESET);
       // Форматирование вывода на экран вещественных числовых значений + управление цветом текста и фона, стилем текста
       // "%8.3f" означает: 8 знаков для вещественного числа (f - float) с выравниванием по правому краю,
       // при этом 3 знака после запятой (дробная часть)
@@ -108,7 +108,7 @@ public class Main {
 
       System.out.print("Введите login: ");
 
-      // В 77 строке создаем локальную строковую переменную с именем userLogin
+      // В 114 строке создаем локальную строковую переменную с именем userLogin
       // и принимаем в нее ввод от пользователя
 
       String userLogin = scanner.next();
@@ -116,7 +116,7 @@ public class Main {
       // login == usersLogin - сравнивает ссылки
       // login.equals(userLogin) - сравнивает значения
 
-      if (login.equals(userLogin)) {
+      if (login.equalsIgnoreCase(userLogin)) {
          System.out.print("Введите password: ");
          String usersPassword = scanner.next();
 
@@ -144,15 +144,15 @@ public class Main {
    //  Тернарный оператор. Пример 2
    private static void TernaryExample_2() {
       System.out.println("\nТернарный оператор. Пример 2");
-      String str = "Hello ";
+      String str = "Hello, ";
 
       System.out.println("Введите свой логин : ");
 
-      // На 112 строке создаем переменную с именем login типа string и принимаем в нее ввод от пользователя
+      // На 152 строке создаем переменную с именем login типа string и принимаем в нее ввод от пользователя
       String login = scanner.next();
 
-      // На 115 строке переменной str присваиваем возвращаемое значение тернарного оператора
-      str += login.equals("Admin") ? "Administrator" : "User";
+      // На 155 строке переменной str присваиваем возвращаемое значение тернарного оператора
+      str += login.equalsIgnoreCase("Admin") ? "Administrator" : "User";
 
       System.out.println(str);
    }
@@ -204,15 +204,15 @@ public class Main {
    //  Тернарный оператор. Пример 5
    private static void TernaryExample_5() {
       System.out.println("\nТернарный оператор. Пример 5");
-      double quantity = 10;    // Количество единиц товара.
+      byte quantity = (byte) Math.round(5 + Math.random() * 10);    // Количество единиц товара.
       double price = 100;      // Цена за единицу товара.
-      double discount = 0.75;  // Скидка на общую стоимость - 25%.
+      double discount = 0.25;  // Скидка на общую стоимость - 25%.
       double cost = 0.0;       // Общая стоимость.
 
       // ЕСЛИ: Купили 10 единиц товара и больше. ТО: предоставить скидку в 25%. ИНАЧЕ: Скидку не предоставлять.
-      cost = quantity * price * (quantity >= 10 ? discount : 1);
+      cost = quantity * price * (quantity >= 10 ? (1 - discount) : 1);
 
-      System.out.println("Общая стоимость товара составляет: " + cost + " у.е.");
+      System.out.println("Общая стоимость " + quantity + " единиц товара составляет: " + cost + " у.е.");
    }
 
    //   Оператор множественного выбора. Пример 1
