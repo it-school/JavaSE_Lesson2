@@ -7,13 +7,48 @@ public class Main {
    // Экземпляр класса Scanner для ввода значений в консоль
    private static final Scanner scanner = new Scanner(System.in);
 
+   public static void main(String[] args) {
+      Random r = new Random();
+      double b = r.nextDouble() * 5;
+      System.out.println(String.format("%8.3f", b));  // Форматирование вывода на экран вещественных числовых значений
+      // "%8.3f" означает: 8 знаков для вещественного числа (f - float) с выравниванием по правому краю,
+      // при этом 3 знака после запятой (дробная часть)
+
+      ConditionExample_1();
+//      ConditionExample_2();
+//      ConditionExample_3();
+//      ConditionExample_4();
+//      ConditionExample_5();
+//
+//      TernaryExample_1();
+//      TernaryExample_2();
+//      TernaryExample_3();
+//      TernaryExample_4();
+//      TernaryExample_5();
+//
+//      SwitchExample_1();
+//      SwitchExample_2();
+//      SwitchExample_3();
+//      SwitchExample_4();
+//      CoffeeMakerExample();
+//
+//      FromIfToTernary();
+//      FromIfToSwitch();
+//
+//      HardwareLogicExample();
+//      ShortLogic();
+//      LogicalExpressions();
+//
+//      HomeworkExample_1();
+//      HomeworkExample_2();
+   }
+
    // Ветвления. Пример 1
    private static void ConditionExample_1() {
       System.out.println("\nВетвления. Пример 1");
       int a = 1, b = 2; // создаем две целочисленные переменные
 
-      // На 16-й строке создаем условную конструкцию if, в условии которой проверяем: a меньше b
-
+      // В 52-й строке создаем условную конструкцию if, в условии которой проверяем: a меньше b
       if (a < b)      // Если условие удовлетворяет истинности, выполняем тело условной конструкции.
       {
          System.out.println("a < b");     // Ветвь 1
@@ -32,8 +67,6 @@ public class Main {
       {
          System.out.println("a не меньше b");       // Ветвь 2
       }
-
-
    }
 
    // Ветвления. Пример 3
@@ -75,20 +108,20 @@ public class Main {
 
       System.out.print("Введите login: ");
 
-      // На 77 строке создаем строкову локальную переменную с именем usersLogin
+      // В 77 строке создаем локальную строковую переменную с именем userLogin
       // и принимаем в нее ввод от пользователя
 
-      String usersLogin = scanner.next();
+      String userLogin = scanner.next();
 
       // login == usersLogin - сравнивает ссылки
       // login.equals(userLogin) - сравнивает значения
 
-      if (login.equals(usersLogin)) {
+      if (login.equals(userLogin)) {
          System.out.print("Введите password: ");
          String usersPassword = scanner.next();
 
          if (password.equals(usersPassword)) {
-            System.out.println("Здравствуйте " + usersLogin + " Вы вошли в систему.");
+            System.out.println("Здравствуйте " + userLogin + " Вы вошли в систему.");
          } else {
             System.out.println("Вы ввели неверный пароль.");
          }
@@ -184,30 +217,29 @@ public class Main {
 
    //   Оператор множественного выбора. Пример 1
    private static void SwitchExample_1() {
-      // Предлагаем пользователю ввести число.
       System.out.println("\nОператор множественного выбора. Пример 1");
 
+      // Предлагаем пользователю ввести число.
       System.out.println("Введите число 1 или 2: ");
 
       // Принимаем ввод от пользователя.
       String number = scanner.next();
 
-      // На 196 строке создаем конструкцию многозначного выбора, переключатель - switch,
+      // В 231 строке создаем конструкцию многозначного выбора, переключатель - switch,
       // которому в качестве выражения-селектора, передаем переменную - number.
 
       switch (number)  // (number) — выражение-селектор.
       {
-         // В теле переключателя switch-case, на 200 и 207 строках,
+         // В теле переключателя switch-case, в 239 и 245 строках,
          // создаем два оператора case, c постоянными выражениями равными "1" и "2" соответственно.
 
          // Если значение выражения-селектора совпадет с одним из значений постоянных выражений,
          // то выполняется тело оператора case, постоянное выражение которого, совпало с выражением-селектора.
 
-         case "1":    // "1" — постоянное выражение.
+         case "1":   // "1" — постоянное выражение.
          {
             System.out.println("Один");                                       // Ветвь 1
-            // Выход из переключателя.
-            break;
+            break;   // Выход из переключателя.
          }
 
          case "2": {
@@ -437,14 +469,14 @@ public class Main {
          System.out.println("Мы в блоке ELSE");
       }
    }
-
    //   Примеры логических выражений -- ОБЯЗАТЕЛЬНО К ОЗНАКОМЛЕНИЮ
-   private static void LogicalExpressions() {
 
+   private static void LogicalExpressions() {
       System.out.println("\nПримеры логических ветвлений");
 
       // Переменные для сравнения
       int a = 2, b = 3, c = 3;
+
       // Переменная, содержащая результат логической функции
       boolean bool = false;
 
@@ -454,19 +486,19 @@ public class Main {
       // Простые логические выражения
       System.out.print("Простые логические выражения");
 
-      bool = (a > b);                                 // false
+      bool = (a > b);                                    // false
       System.out.println("a > b = " + bool);
 
-      bool = (a < b);                                 // true
+      bool = (a < b);                                    // true
       System.out.println("a < b = " + bool);
 
-      bool = (a == b);                                // false
+      bool = (a == b);                                   // false
       System.out.println("a == b = " + bool);
 
-      bool = (a != b);                                 // true
+      bool = (a != b);                                   // true
       System.out.println("a != b = " + bool);
 
-      bool = (b == c);                                  // true
+      bool = (b == c);                                   // true
       System.out.println("b == c = " + bool);
 
       bool = (b >= c);                                   // true
@@ -482,19 +514,19 @@ public class Main {
       bool = (a > b) || (b == c);                           // true
       System.out.println("(a > b) || (b==c) = " + bool);
 
-      bool = !(a > b) && ((a <= c) || (a == c));       // true
+      bool = !(a > b) && ((a <= c) || (a == c));            // true
       System.out.println(" !(a>b) && ((a<=c) ||(a==c)) = " + bool);
 
-      bool = (a + b) > (a + c);                                // false
+      bool = (a + b) > (a + c);                             // false
       System.out.println("(a+b) > (a+c) = " + bool);
 
-      bool = !((a + b) > (a + c));                             // true
+      bool = !((a + b) > (a + c));                          // true
       System.out.println("!((a+b) > (a+c)) = " + bool);
 
-      bool = ((double) a / b) >= ((double) b / a);               // false
+      bool = ((double) a / b) >= ((double) b / a);          // false
       System.out.println("((double)a/b) >= ((double)b/a) = " + bool);
 
-      bool = (a + (b / c)) >= (b + (b * c));                        // false
+      bool = (a + (b / c)) >= (b + (b * c));                // false
       System.out.println("(a+(b/c)) >= (b+(b*c)) = " + bool);
 
       bool = false & true;                                    // false
@@ -514,9 +546,9 @@ public class Main {
 
    //   Типовая задача из домашнего задания. Пример 1
    private static void HomeworkExample_1() {
-        /*Написать программу, которая вычисляет оптимальный вес для пользователя,
-          сравнивает его с реальным и выдает рекомендацию о необходимости поправиться или похудеть.
-          Оптимальный вес вычисляется по формуле: Рост (см) – 100. */
+     /* Написать программу, которая вычисляет оптимальный вес для пользователя,
+        сравнивает его с реальным и выдает рекомендацию о необходимости поправиться или похудеть.
+        Оптимальный вес вычисляется по формуле: Рост (см) – 100. */
 
       System.out.println("Типовая задача из домашнего задания. Пример 1");
 
@@ -548,13 +580,12 @@ public class Main {
       else {
          System.out.println("Ваш вес идеален ! ");
       }
-
    }
 
    //   Типовая задача из домашнего задания. Пример 2
    private static void HomeworkExample_2() {
-        /*Напишите программу, которая запрашивает у пользователя номер месяца и затем выводит соответствующее название времени года.
-        В случае, если пользователь введет недопустимое число, программа должна вывести сообщение "Ошибка ввода данных". */
+      /*Напишите программу, которая запрашивает у пользователя номер месяца и затем выводит соответствующее название времени года.
+      В случае, если пользователь введет недопустимое число, программа должна вывести сообщение "Ошибка ввода данных". */
 
       System.out.println("Типовая задача из домашнего задания. Пример 2");
 
@@ -575,39 +606,5 @@ public class Main {
       } else {
          System.out.println("Ошибка ввода данных");
       }
-   }
-
-   public static void main(String[] args) {
-      Random r = new Random();
-      double b = r.nextDouble() * 5;
-      System.out.println(String.format("%8.3f", b));
-
-      ConditionExample_1();
-//      ConditionExample_2();
-//      ConditionExample_3();
-//      ConditionExample_4();
-//      ConditionExample_5();
-//
-//        TernaryExample_1();
-//        TernaryExample_2();
-//        TernaryExample_3();
-//        TernaryExample_4();
-//        TernaryExample_5();
-//
-//        SwitchExample_1();
-//        SwitchExample_2();
-//        SwitchExample_3();
-//        SwitchExample_4();
-//        CoffeeMakerExample();
-//
-//        FromIfToTernary();
-//        FromIfToSwitch();
-//
-//        HardwareLogicExample();
-//        ShortLogic();
-//        LogicalExpressions();
-//
-//        HomeworkExample_1();
-//        HomeworkExample_2();
    }
 }
