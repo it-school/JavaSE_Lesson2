@@ -14,7 +14,7 @@ public class Main {
       // "%8.3f" означает: 8 знаков для вещественного числа (f - float) с выравниванием по правому краю,
       // при этом 3 знака после запятой (дробная часть)
 
-      ConditionExample_1();
+//      ConditionExample_1();
 //      ConditionExample_2();
 //      ConditionExample_3();
 //      ConditionExample_4();
@@ -38,9 +38,21 @@ public class Main {
 //      HardwareLogicExample();
 //      ShortLogic();
 //      LogicalExpressions();
+
+//      LogicalShift();
 //
 //      HomeworkExample_1();
 //      HomeworkExample_2();
+   }
+
+   /**
+    * Logical shift example
+    */
+   private static void LogicalShift() {
+      int a = 10;
+      int b = 10;
+      System.out.println(a << 2 + b >> 2);
+      System.out.println(b >> 2);
    }
 
    // Ветвления. Пример 1
@@ -60,7 +72,7 @@ public class Main {
       System.out.println("\nВетвления. Пример 2");
       int a = 2, b = 1;
 
-      if (a < b)  // Если условие удовлетворяет истинности, выполняем тело блока if.
+      if (a <= b)  // Если условие удовлетворяет истинности, выполняем тело блока if.
       {
          System.out.println("a < b");               // Ветвь 1
       } else        // Иначе, выполняем тело блока else.
@@ -108,9 +120,8 @@ public class Main {
 
       System.out.print("Введите login: ");
 
-      // В 114 строке создаем локальную строковую переменную с именем userLogin
+      // В 125 строке создаем локальную строковую переменную с именем userLogin
       // и принимаем в нее ввод от пользователя
-
       String userLogin = scanner.next();
 
       // login == usersLogin - сравнивает ссылки
